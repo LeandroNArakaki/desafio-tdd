@@ -2,10 +2,14 @@ package com.devsuperior.demo.dto;
 
 import com.devsuperior.demo.entities.City;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class CityDTO {
 	
 	private Long id;
 	private String name;
+	private List<EventDTO> eventDTOS = new ArrayList<>();
 	
 	public CityDTO() {
 	}
@@ -34,5 +38,9 @@ public class CityDTO {
 
 	public void setName(String name) {
 		this.name = name;
+	}
+
+	public List<EventDTO> getEventDTOS() {
+		return eventDTOS;
 	}
 }
