@@ -9,8 +9,7 @@ public class CityDTO {
 	
 	private Long id;
 	private String name;
-	private List<EventDTO> eventDTOS = new ArrayList<>();
-	
+
 	public CityDTO() {
 	}
 
@@ -40,7 +39,5 @@ public class CityDTO {
 		this.name = name;
 	}
 
-	public List<EventDTO> getEventDTOS() {
-		return eventDTOS;
-	}
+
 }

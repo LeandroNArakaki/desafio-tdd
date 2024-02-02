@@ -1,9 +1,7 @@
 package com.devsuperior.demo.services;
 
 import com.devsuperior.demo.dto.CityDTO;
-import com.devsuperior.demo.dto.EventDTO;
 import com.devsuperior.demo.entities.City;
-import com.devsuperior.demo.entities.Event;
 import com.devsuperior.demo.exceptions.DatabaseException;
 import com.devsuperior.demo.exceptions.ResourceNotFoundException;
 import com.devsuperior.demo.repositories.CityRepository;
@@ -23,9 +21,6 @@ public class CityService {
 
     @Autowired
     private CityRepository repository;
-
-    @Autowired
-    private EventRepository eventRepository;
 
 
     public List<CityDTO> findAllCities() {
@@ -57,9 +52,5 @@ public class CityService {
         entity.setName(dto.getName());
         entity.getEvents().clear();
 
-        for (EventDTO eventDTO : dto.getEventDTOS()) {
-            Event event = eventRepository.getReferenceById(eventDTO.getId());
-            entity.getEvents().add(event);
-        }
     }
 }
